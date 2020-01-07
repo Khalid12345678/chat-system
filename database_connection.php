@@ -20,8 +20,7 @@ function fetch_user_last_activity($user_id, $connect){
 	}
 }
 function fetch_user_chat_history($from_user_id, $to_user_id, $connect){
-	$query ="
-	SELECT * FROM chat_message
+	$query ="SELECT * FROM chat_message 
     WHERE (from_user_id = '".$from_user_id."' AND to_user_id = '".$to_user_id."')
     OR (from_user_id = '".$to_user_id."' AND to_user_id = '".$from_user_id."')
     ORDER BY timestamp
